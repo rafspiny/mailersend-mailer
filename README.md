@@ -1,2 +1,3 @@
 # mailersend-mailer
-About Provides MailSend integration for Symfony Mailer
+
+Provides MailSend integration for Symfony Mailer
