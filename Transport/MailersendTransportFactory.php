@@ -26,7 +26,7 @@ class MailersendTransportFactory extends AbstractTransportFactory
         $host = 'default' === $dsn->getHost() ? null : $dsn->getHost();
 
         if ('mailersend+api' === $scheme) {
-            return (new MailersendApiTransport($user, $password, $this->client, $this->dispatcher, $this->logger))->setHost($host);
+            return (new MailersendApiTransport($user, $this->client, $this->dispatcher, $this->logger))->setHost($host);
         }
 
         if (\in_array($scheme, ['mailersend+smtp', 'mailersend+smtps', 'mailersend'])) {
