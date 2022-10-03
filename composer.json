@@ -1,18 +1,14 @@
 {
-    "name": "symfony/mailersend-mailer",
-    "type": "symfony-mailer-bridge",
+    "name": "rhukster/mailersend-mailer",
+    "type": "rhukster-mailer-bridge",
     "description": "Symfony MailerSend Mailer Bridge",
     "keywords": [],
     "homepage": "https://symfony.com",
     "license": "MIT",
     "authors": [
         {
-            "name": "Fabien Potencier",
-            "email": "fabien@symfony.com"
-        },
-        {
-            "name": "Symfony Community",
-            "homepage": "https://symfony.com/contributors"
+            "name": "Andy Miller",
+            "email": "rhuk@getgrav.org"
         }
     ],
     "require": {
