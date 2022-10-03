@@ -46,11 +46,10 @@ class MailersendApiTransport extends AbstractApiTransport
 
     protected function doSendApi(SentMessage $sentMessage, Email $email, Envelope $envelope): ResponseInterface
     {
-        xdebug_break();
         $response = $this->client->request('POST', sprintf('https://%s/v%s/email', $this->getEndpoint(), self::API_VERSION), [
             'headers' => [
                 'Accept' => 'application/json',
-                'Authorization' => $this->key,
+                'Authorization' => 'Bearer '.$this->key,
             ],
             'json' => $this->getPayload($email, $envelope),
         ]);
@@ -71,7 +70,7 @@ class MailersendApiTransport extends AbstractApiTransport
             }
         }
 
-        $sentMessage->setMessageId($response->getHeaders(false)['X-Message-Id'][0]);
+        $sentMessage->setMessageId($response->getHeaders(false)['x-message-id'][0]);
 
         return $response;
     }
