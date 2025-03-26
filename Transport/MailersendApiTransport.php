@@ -125,8 +125,6 @@ class MailersendApiTransport extends AbstractApiTransport
                     throw new TransportException(sprintf('Too many "%s" instances present in the email headers. MailerSend does not accept more than 5 tags on an email.', TagHeader::class));
                 }
                 $tags[] = mb_substr($header->getValue(), 0, 255);
-            } else {
-                $payload['headers'][$header->getName()] = $header->getBodyAsString();
             }
         }
 
